@@ -2,7 +2,7 @@ package com.example.employeeslist.presentation
 
 import android.os.Bundle
 import com.arellomobile.mvp.presenter.InjectPresenter
-import com.example.employeeslist.EmployeesApplication
+import com.arellomobile.mvp.presenter.ProvidePresenter
 import com.example.employeeslist.R
 import com.example.employeeslist.entity.employee.Employee
 import com.example.employeeslist.presentation.base.BaseActivity
@@ -18,14 +18,17 @@ class MainActivity : BaseActivity(), EmployeeViewState {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        (application as EmployeesApplication).component.inject(this)
-
         employeePresenter.loadEmployees()
     }
 
 
 
     override fun onLoadEmployees(employees: List<Employee>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        print(employees.toString())
+    }
+
+    @ProvidePresenter
+    fun providePresenter(): EmployeePresenter {
+        return EmployeePresenter(application)
     }
 }

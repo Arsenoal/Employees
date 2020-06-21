@@ -4,7 +4,7 @@ import com.example.employeeslist.domain.employee.EmployeeFromRest
 import com.example.employeeslist.domain.employee.EmployeeUseCase
 import com.example.employeeslist.repo.employee.EmployeeRepo
 import com.example.employeeslist.repo.employee.EmployeeRestRepo
-import com.example.employeeslist.repo.employee.employee.EmployeeRestService
+import com.example.employeeslist.repo.employee.EmployeeRestService
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
